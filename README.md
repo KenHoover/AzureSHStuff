@@ -19,7 +19,7 @@ While this code was built for use with Office365 Teams, the messageCard format i
 Paste in the URI for the Teams channel connector that you created in the previous step as the value of the application setting.  Application settings are visible to the function as environment variables.
 7. Use a sample service health alert payload like the one at **[this link](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-alerts-webhook#servicehealth)** to trigger your function by calling the URI using curl or invoke-restmethod.  This repository has a copy of the sample payload from this page in the file `SampleServiceHealthAlertWebhookPayload.json`.  
 
-**Example:**  ```Invoke-RestMethod -Method POST -uri $YourFunctionsURI -body (gc SampleServiceHealthAlertWebhookPayload.json)```
+**Example:**  ```Invoke-RestMethod -Method POST -uri $YourFunctionsURI -body (gc SamplePayload.json)```
 
 A message should appear in your Teams channel that looks like the screenshot at the bottom of this README.  If the screenshot looks good then the function is working.
 
