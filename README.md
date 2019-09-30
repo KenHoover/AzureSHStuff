@@ -18,7 +18,7 @@ While this code was built for use with Office365 Teams, the messageCard format i
 Paste in the URI for the Teams channel connector that you created in the previous step as the value of the application setting.
 6. Use a sample service health alert payload like the one at **[this link](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-alerts-webhook#servicehealth)** to trigger your function by calling the URI using curl or invoke-restmethod.  This repository has a copy of the sample payload from this page in the file `SampleServiceHealthAlertWebhookPayload.json`.  A message should appear in your Teams channel that looks like the screenshot below.  If you get the screenshot then the function is working and should trigger correctly when a service health alert using the action group you created is fired.
 
-The color of the bar at the top of the messageCard varies by the type of alert.  In general, red indicates an urgent active issue, yellow indicates that action is needed, green indicates planned maintenance and blue indicates a message related to resolved or inactive alert such as a RCA posting.
+The color of the bar at the top of the messageCard varies by the type of alert.  In general, red indicates an urgent active issue, yellow indicates that action is needed, green indicates planned maintenance and blue indicates a message related to resolved or inactive alert such as a RCA posting.  The MessageCard schema is fairly flexible and makes it easy to do things like add an icon to the card as well.
 
 ![MessageCard Screenshot](https://github.com/KenHoover/AzureSHStuff/blob/master/SampleHealthAlertCard.PNG?raw=true "Sample MessageCard Output")
 
