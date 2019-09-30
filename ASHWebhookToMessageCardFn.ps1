@@ -144,7 +144,7 @@ $messageCard.add("potentialAction",$potentialActions)
 $messageCardJSON = $messageCard | ConvertTo-Json -Depth 15
 
 ####### Now that the MessageCard is complete, send the outgoing webhook(s) to post the card
-invoke-webrequest -method POST -uri $env:$webhookuri -body $messageCardJSON
+invoke-webrequest -method POST -uri $env:webhookuri -body $messageCardJSON
 
 
 # Associate values to output bindings by calling 'Push-OutputBinding'.
