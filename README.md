@@ -1,4 +1,4 @@
-# Azure Function: Sending Azure Srevice Health Alerts to Teams Channels
+# Azure Function: Sending Azure Service Health Alerts to Teams Channels
 
 The ASHWebhookToMessageCardFn.ps1 file contains code to use in a Powershell-based Azure function triggered by an incoming webhook (http trigger).  
 
@@ -16,6 +16,6 @@ In the future this should be updated to use the newer and more flexible [Adaptiv
 4. In Teams, **[create a Webhook Connector](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/connectors/connectors-using#setting-up-a-custom-incoming-webhook)** for the channel that should receive the alert notifications.
 5. Create an environment variable for your function named **webhookuri**.  This is done using the **[Application settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#settings)** screen for the webhook with the **New application setting** button.  
 Paste in the URI for the Teams channel connector that you created as the value of the application setting.
-6. Use a sample service health alert payload like the one at **[this link](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-alerts-webhook#servicehealth)* to trigger your function by calling the URI with curl or invoke-restmethod.  This repository has a copy of the sample payload from this page in the file SampleServiceHealthAlertWebhookPayload.json.  A message should appear in your Teams channel that looks like the screenshot below.
+6. Use a sample service health alert payload like the one at **[this link](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-alerts-webhook#servicehealth)** to trigger your function by calling the URI with curl or invoke-restmethod.  This repository has a copy of the sample payload from this page in the file SampleServiceHealthAlertWebhookPayload.json.  A message should appear in your Teams channel that looks like the screenshot below.
 
 ![MessageCard Screenshot](https://github.com/KenHoover/AzureSHStuff/blob/master/SampleHealthAlertCard.PNG?raw=true "Sample MessageCard Output")
