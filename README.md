@@ -1,4 +1,4 @@
-# Sending Azure Service Health Alerts to Teams Channels with Azure Functions
+# Sending Azure Service Health Alerts to Teams Channels Using Azure Functions
 
 The ASHWebhookToMessageCardFn.ps1 file contains code to use in a Powershell-based [Azure function](https://azure.microsoft.com/en-us/services/functions/) triggered by an incoming webhook (http trigger).  *Azure Functions with Powershell runtimes are currently in Preview.*
 
