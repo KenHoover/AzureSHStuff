@@ -18,8 +18,11 @@ While this code was built for use with Office365 Teams, the messageCard format i
 6. Back in the Azure portal, create an application setting for your function named **webhookuri**.  This is done using the **[Application settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#settings)** screen for the function with the **New application setting** button.  
 Paste in the URI for the Teams channel connector that you created in the previous step as the value of the application setting.  Application settings are visible to the function as environment variables.
 7. Use a sample service health alert payload like the one at **[this link](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-alerts-webhook#servicehealth)** to trigger your function by calling the URI using curl or invoke-restmethod.  This repository has a copy of the sample payload from this page in the file `SampleServiceHealthAlertWebhookPayload.json`.  
-**Example:**  ```Invooke-RestMethod -Method POST -uri $YourFunctionsURI -body (gc SampleServiceHealthAlertWebhookPayload.json)```
+
+**Example:**  ```Invoke-RestMethod -Method POST -uri $YourFunctionsURI -body (gc SampleServiceHealthAlertWebhookPayload.json)```
+
 A message should appear in your Teams channel that looks like the screenshot at the bottom of this README.  If the screenshot looks good then the function is working.
+
 8. Wait for an Azure service health alert to trigger your function and check out the result!
 
 The color of the bar at the top of the messageCard varies by the type of alert.  In general, red indicates an urgent active issue, yellow indicates that action is needed, green indicates planned maintenance and blue indicates a message related to resolved or inactive alert such as a RCA posting.  The MessageCard schema is fairly flexible and makes it easy to do things like add an icon to the card as well.
