@@ -1,10 +1,10 @@
-# Azure Function: Sending Azure Service Health Alerts to Teams Channels
+# Sending Azure Service Health Alerts to Teams Channels with Azure Functions
 
-The ASHWebhookToMessageCardFn.ps1 file contains code to use in a Powershell-based Azure function triggered by an incoming webhook (http trigger).  
+The ASHWebhookToMessageCardFn.ps1 file contains code to use in a Powershell-based [Azure function](https://azure.microsoft.com/en-us/services/functions/) triggered by an incoming webhook (http trigger).  *Azure Functions with Powershell runtimes are currently in Preview.*
 
-This function parses the payload of the webhook and converts it to a [MessageCard](https://docs.microsoft.com/en-us/outlook/actionable-messages/message-card-reference)  which is then sent as a webhook to a URI specified in an environment variable for the function.
+This code parses the payload of the incoming webhook and creates a [MessageCard](https://docs.microsoft.com/en-us/outlook/actionable-messages/message-card-reference) which is then sent as a webhook to a URI specified in an environment variable for the function.
 
-While this code was built for use with Office365 Teams, the messageCard format is used in other places as well so this code could probably be adapted to other purposes with a bit of work.
+While this code was built for use with Office365 Teams, the messageCard format is used in other Microsoft tools such as Outlook so this code could probably be adapted to other purposes with a bit of work.
 
 **Future plans:**  In the future this should be updated to use the newer and more flexible [Adaptive Card](https://docs.microsoft.com/en-us/outlook/actionable-messages/adaptive-card) format.
 
